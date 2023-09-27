@@ -18,6 +18,15 @@ pipeline {
             steps {
                 sh 'docker build -t amitg01/finance-me:1.0 .'
             }    
-        }  
+        } 
+         stage('Docker Image Push') {
+            steps {
+                
+                    withCredentials([string(credentialsId: 'dockerhub-pwd', variable: 'dockerhubpwd')]) {
+                    sh 'docker login -u amitg01 -p ${dockerhubpwd}'
+                    }    
+                    sh 'docker push amitg01/finance-me:1.0'  
+           }     
+        }
     }
 }    
