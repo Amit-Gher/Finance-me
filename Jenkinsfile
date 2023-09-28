@@ -32,5 +32,15 @@ pipeline {
                     sh 'docker push amitg01/finance-me:1.0'  
            }     
         }
+        stage('Configure Server with Terraform'){
+            steps {
+                    dir('my-serverfiles'){
+                     sh'sudo chmod 600 insure-me.pem'
+                     sh'terraform init'
+                     sh'terraform validate'
+                     sh'terraform apply --auto-approve'
+                    }
+            }
+        }     
     }
 }    
