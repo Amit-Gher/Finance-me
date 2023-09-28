@@ -1,4 +1,4 @@
-resource "aws_instance" "Node Server" {
+resource "aws_instance" "Node_Server" {
     ami = "ami-0f5ee92e2d63afc18"
     instance_type = "t2.micro"
     key_name = "Insure-me"
@@ -13,9 +13,9 @@ provisioner "remote-exec" {
    inline = ["echo 'wait to start instance'"]
 }
 tag = {
-   Name = "Node Server"
+   Name = "Node_Server"
 }
 provisioner "local-exec" {
-   command = "echo ${aws_instance.Node Server.public_ip} > inventory"
+   command = "echo ${aws_instance.Node_Server.public_ip} > inventory"
 } 
 }
