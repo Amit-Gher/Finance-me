@@ -4,8 +4,8 @@ pipeline {
       maven 'M2_HOME'
           }
     environment {
-        AWS_ACCESS_KEY_ID = 'AKIAZGROM53I2KNKYWWL'
-        AWS_SECRET_ACCESS_KEY = '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'
+        AWS_ACCESS_KEY_ID = 'AKIAZGROM53IQUIAIZEA'
+        AWS_SECRET_ACCESS_KEY = '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'
         AWS_DEFAULT_REGION    = 'ap-south-1'
     }
     stages {
