@@ -12,7 +12,7 @@ connection {
 provisioner "remote-exec" {
    inline = ["echo 'wait to start instance'"]
 }
-tag = {
+tags = {
    Name = "Node_Server"
 }
 provisioner "local-exec" {
