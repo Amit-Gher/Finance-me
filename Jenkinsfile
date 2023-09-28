@@ -35,11 +35,13 @@ pipeline {
         stage('Configure Server with Terraform'){
             steps {
                     dir('my-serverfiles'){
+                    sshagent(credentials: ['ubuntu (SSH-key)']) {    
                      sh 'sudo chmod 600 Insure-me.pem'
                      sh 'terraform init'
                      sh 'terraform validate'
                      sh 'terraform apply --auto-approve'
                     }
+                    }    
             }
         }     
     }
