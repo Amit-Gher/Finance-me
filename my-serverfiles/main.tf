@@ -19,6 +19,6 @@ tags = {
    Name = "Node_Server"
 }
 provisioner "local-exec" {
-   command = "echo ${aws_instance.Node_Server.public_ip} > inventory"
+   command = "echo ${aws_instance.my_ec2instance.public_ip} > inventory"
 } 
 }
