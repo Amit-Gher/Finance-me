@@ -4,8 +4,8 @@ pipeline {
       maven 'M2_HOME'
           }
     environment {
-        AWS_ACCESS_KEY_ID = 'AKIAZGROM53IQDEUL3HX'
-        AWS_SECRET_ACCESS_KEY = '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'
+        AWS_ACCESS_KEY_ID = 'AKIAZGROM53I2KNKYWWL'
+        AWS_SECRET_ACCESS_KEY = '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'
     }
     stages {
         stage('Git Checkout'){
