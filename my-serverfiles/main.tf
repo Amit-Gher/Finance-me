@@ -1,7 +1,7 @@
 provider "aws" {
   region ="ap-south-1"
 }  
-resource "aws_instance" "Node_Server" {
+resource "aws_instance" "my_ec2instance" {
     ami = "ami-0f5ee92e2d63afc18"
     instance_type = "t2.micro"
     key_name = "Insure-me"
