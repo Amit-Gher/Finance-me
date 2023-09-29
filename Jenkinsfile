@@ -36,7 +36,7 @@ pipeline {
         stage('Configure Server with Terraform'){
             steps {
                     dir('my-serverfiles'){ 
-                     sh 'chmod 600 Insure-me.pem'   
+                     sh 'chmod 600 Insureme.pem'   
                      sh 'terraform init'
                      sh 'terraform validate'
                      sh 'terraform apply --auto-approve'
