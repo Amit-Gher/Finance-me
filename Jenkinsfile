@@ -11,7 +11,7 @@ pipeline {
     stages {
         stage('Git Checkout'){
             steps {
-              git 'https://github.com/Amit-Gher/Finance-me.git'
+               git branch: 'master', url: 'https://github.com/Amit-Gher/Finance-me.git'
             }
         }    
         stage('Build Package') {
@@ -36,7 +36,7 @@ pipeline {
         stage('Configure Server with Terraform'){
             steps {
                     dir('my-serverfiles'){ 
-                     //sh 'sudo chmod 600 Insure-me.pem'   
+                     sh 'sudo chmod 600 Insure-me.pem'   
                      sh 'terraform init'
                      sh 'terraform validate'
                      sh 'terraform apply --auto-approve'
