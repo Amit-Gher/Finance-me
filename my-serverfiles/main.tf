@@ -12,13 +12,13 @@ connection {
     private_key = file("./Insure-me.pem")
     host        = self.public_ip
 }
-provisioner "remote-exec" {
-   inline = ["echo 'wait to start instance'"]
-}
+//provisioner "remote-exec" {
+ //  inline = ["echo 'wait to start instance'"]
+//}
 tags = {
    Name = "Node_Server"
 }
-provisioner "local-exec" {
-   command = "echo ${aws_instance.my_ec2instance.public_ip} > inventory"
-} 
+//provisioner "local-exec" {
+//   command = "echo ${aws_instance.my_ec2instance.public_ip} > inventory"
+//} 
 }
