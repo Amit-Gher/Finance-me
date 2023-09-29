@@ -6,7 +6,7 @@ pipeline {
   environment {
         AWS_ACCESS_KEY_ID = credentials('AWS_ACCESS_KEY_ID')
         AWS_SECRET_ACCESS_KEY = credentials('AWS_SECRET_ACCESS_KEY')
-        AWS_DEFAULT_REGION    = 'us-east-1'
+        AWS_DEFAULT_REGION    = 'ap-south-1'
     }
     stages {
         stage('Git Checkout'){
@@ -36,7 +36,7 @@ pipeline {
         stage('Configure Server with Terraform'){
             steps {
                     dir('my-serverfiles'){ 
-                     sh 'chmod 600 Insureme.pem'  
+                     sh 'sudo chmod 600 Insureme.pem'  
                      sh 'terraform init'
                      sh 'terraform validate'
                      sh 'terraform apply --auto-approve'
